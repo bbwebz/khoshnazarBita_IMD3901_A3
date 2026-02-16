@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class TileAnimate : MonoBehaviour
 {
-    public float pressDistance = 0.1f;
-    public float pressSpeed = 3f;
+    public float pressDistance = 0.3f;
+    public float pressSpeed = 2f;
     Vector3 startPos;
     bool isPressed = false;
     bool isAnimating = false;
@@ -34,17 +34,9 @@ public class TileAnimate : MonoBehaviour
     public void Press()
     {
         Debug.Log("tile pressed");
-      
         isPressed = true;
         isAnimating = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("player stepped on tile");
-            Press();
-        }
-    }
+   
 }

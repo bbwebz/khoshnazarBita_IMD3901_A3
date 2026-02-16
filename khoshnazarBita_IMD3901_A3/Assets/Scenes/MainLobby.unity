@@ -346,7 +346,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 147481152}
-  - component: {fileID: 147481153}
   m_Layer: 0
   m_Name: Tiles
   m_TagString: Untagged
@@ -369,36 +368,22 @@ Transform:
   m_Children:
   - {fileID: 287915414}
   - {fileID: 1297945468}
-  - {fileID: 377280347}
-  - {fileID: 675044012}
-  - {fileID: 2110801944}
   - {fileID: 1368381099}
-  - {fileID: 1478454555}
-  - {fileID: 1833596545}
-  - {fileID: 807187619}
-  - {fileID: 1632142427}
-  - {fileID: 588435030}
-  - {fileID: 2087989247}
   - {fileID: 1230927027}
   - {fileID: 1246941019}
+  - {fileID: 377280347}
+  - {fileID: 1478454555}
+  - {fileID: 1833596545}
   - {fileID: 268540402}
+  - {fileID: 675044012}
+  - {fileID: 807187619}
+  - {fileID: 1632142427}
   - {fileID: 1663003346}
+  - {fileID: 2110801944}
+  - {fileID: 588435030}
+  - {fileID: 2087989247}
   m_Father: {fileID: 562885857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &147481153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147481151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressDistance: 0.3
-  pressSpeed: 2
 --- !u!1 &264371809
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,8 +505,9 @@ GameObject:
   - component: {fileID: 268540405}
   - component: {fileID: 268540404}
   - component: {fileID: 268540403}
+  - component: {fileID: 268540406}
   m_Layer: 0
-  m_Name: Tile (2)
+  m_Name: Tile9
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -616,6 +602,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268540401}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &268540406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268540401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &287915413
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 287915415}
   - component: {fileID: 287915418}
   m_Layer: 0
-  m_Name: Tile (16)
+  m_Name: Tile1
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -751,8 +751,9 @@ GameObject:
   - component: {fileID: 377280350}
   - component: {fileID: 377280349}
   - component: {fileID: 377280348}
+  - component: {fileID: 377280351}
   m_Layer: 0
-  m_Name: Tile (7)
+  m_Name: Tile6
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,6 +848,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377280346}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &377280351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377280346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,8 +1322,9 @@ GameObject:
   - component: {fileID: 588435033}
   - component: {fileID: 588435032}
   - component: {fileID: 588435031}
+  - component: {fileID: 588435034}
   m_Layer: 0
-  m_Name: Tile (12)
+  m_Name: Tile15
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1403,6 +1419,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588435029}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &588435034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588435029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &603103726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,8 +1594,9 @@ GameObject:
   - component: {fileID: 675044015}
   - component: {fileID: 675044014}
   - component: {fileID: 675044013}
+  - component: {fileID: 675044016}
   m_Layer: 0
-  m_Name: Tile (8)
+  m_Name: Tile10
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1660,6 +1691,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675044011}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &675044016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675044011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &698435355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +1877,7 @@ PrefabInstance:
     - target: {fileID: 7114737923713757443, guid: 45b197aea0f2b94468bbe38501e8eb6a, type: 3}
       propertyPath: tileAnimate_access
       value: 
-      objectReference: {fileID: 147481153}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1850,8 +1895,9 @@ GameObject:
   - component: {fileID: 807187622}
   - component: {fileID: 807187621}
   - component: {fileID: 807187620}
+  - component: {fileID: 807187623}
   m_Layer: 0
-  m_Name: Tile (11)
+  m_Name: Tile11
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1946,6 +1992,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807187618}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &807187623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807187618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,8 +2237,9 @@ GameObject:
   - component: {fileID: 1230927030}
   - component: {fileID: 1230927029}
   - component: {fileID: 1230927028}
+  - component: {fileID: 1230927031}
   m_Layer: 0
-  m_Name: Tile (6)
+  m_Name: Tile4
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2273,6 +2334,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230927026}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1230927031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230927026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &1246941018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,8 +2360,9 @@ GameObject:
   - component: {fileID: 1246941022}
   - component: {fileID: 1246941021}
   - component: {fileID: 1246941020}
+  - component: {fileID: 1246941023}
   m_Layer: 0
-  m_Name: Tile (1)
+  m_Name: Tile5
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2381,6 +2457,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246941018}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1246941023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246941018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &1297945467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,8 +2483,9 @@ GameObject:
   - component: {fileID: 1297945471}
   - component: {fileID: 1297945470}
   - component: {fileID: 1297945469}
+  - component: {fileID: 1297945472}
   m_Layer: 0
-  m_Name: Tile (4)
+  m_Name: Tile2
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2489,6 +2580,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297945467}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1297945472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297945467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &1368381098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,8 +2606,9 @@ GameObject:
   - component: {fileID: 1368381102}
   - component: {fileID: 1368381101}
   - component: {fileID: 1368381100}
+  - component: {fileID: 1368381103}
   m_Layer: 0
-  m_Name: Tile (5)
+  m_Name: Tile3
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2597,6 +2703,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368381098}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1368381103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368381098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &1478454554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,8 +2729,9 @@ GameObject:
   - component: {fileID: 1478454558}
   - component: {fileID: 1478454557}
   - component: {fileID: 1478454556}
+  - component: {fileID: 1478454559}
   m_Layer: 0
-  m_Name: Tile (10)
+  m_Name: Tile7
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2705,6 +2826,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478454554}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1478454559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478454554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1001 &1497264012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2778,8 +2913,9 @@ GameObject:
   - component: {fileID: 1632142430}
   - component: {fileID: 1632142429}
   - component: {fileID: 1632142428}
+  - component: {fileID: 1632142431}
   m_Layer: 0
-  m_Name: Tile (14)
+  m_Name: Tile12
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2874,6 +3010,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632142426}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1632142431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632142426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &1659013271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,8 +3254,9 @@ GameObject:
   - component: {fileID: 1663003349}
   - component: {fileID: 1663003348}
   - component: {fileID: 1663003347}
+  - component: {fileID: 1663003350}
   m_Layer: 0
-  m_Name: Tile (3)
+  m_Name: Tile13
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3200,6 +3351,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663003345}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1663003350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663003345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &1691924622
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,8 +3410,9 @@ GameObject:
   - component: {fileID: 1833596548}
   - component: {fileID: 1833596547}
   - component: {fileID: 1833596546}
+  - component: {fileID: 1833596549}
   m_Layer: 0
-  m_Name: Tile (13)
+  m_Name: Tile8
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3341,6 +3507,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833596544}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1833596549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833596544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &2087989246
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,8 +3533,9 @@ GameObject:
   - component: {fileID: 2087989250}
   - component: {fileID: 2087989249}
   - component: {fileID: 2087989248}
+  - component: {fileID: 2087989251}
   m_Layer: 0
-  m_Name: Tile (15)
+  m_Name: Tile16
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3449,6 +3630,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087989246}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2087989251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087989246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1 &2110801943
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,8 +3656,9 @@ GameObject:
   - component: {fileID: 2110801947}
   - component: {fileID: 2110801946}
   - component: {fileID: 2110801945}
+  - component: {fileID: 2110801948}
   m_Layer: 0
-  m_Name: Tile (9)
+  m_Name: Tile14
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3557,6 +3753,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110801943}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2110801948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110801943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressDistance: 0.3
+  pressSpeed: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

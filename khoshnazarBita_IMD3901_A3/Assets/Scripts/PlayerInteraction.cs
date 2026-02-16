@@ -8,7 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public Crosshair crosshair_access;
     public PickupController pickupController_access;
-    public TileAnimate tileAnimate_access;
+    //public TileAnimate tileAnimate_access;
    
     void Update()
     {
@@ -24,15 +24,17 @@ public class PlayerInteraction : MonoBehaviour
                 //checking if the ray hits something with a collider that is interactable
                 crosshair_access.setInteract(true);
 
-                if (Keyboard.current.iKey.wasPressedThisFrame) 
-                {
-                    Debug.Log("i key was pressed to interact");
-                }
-
                 if (Keyboard.current.pKey.wasPressedThisFrame)
                 {
                     Debug.Log("tile pressed was: " + hit.collider.gameObject.name);
-                    tileAnimate_access.Press();
+                    //tileAnimate_access.Press();
+
+                    //trigger the press function only for the tile that was hit with the ray
+                    TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
+                    if (tile != null)
+                    {
+                        tile.Press();
+                    }
                 }
 
                 //Debug.Log("interact was set to true");
