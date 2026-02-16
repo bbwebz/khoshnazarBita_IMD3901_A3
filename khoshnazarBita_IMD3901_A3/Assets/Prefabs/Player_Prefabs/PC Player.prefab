@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1405161824889474254}
   - component: {fileID: 749537235149274389}
   - component: {fileID: 3005463624241160809}
-  - component: {fileID: 1770299751576182079}
+  - component: {fileID: 1482150215584461614}
   m_Layer: 0
   m_Name: PC Player
   m_TagString: Player
@@ -150,7 +150,7 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &1770299751576182079
+--- !u!114 &1482150215584461614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   speed: 5
-  mouseSensitivity: 2
+  mouseSensitivity: 8
   charController: {fileID: 5433857536334856552}
   camTransform: {fileID: 7336117257499632179}
   PcCamera: {fileID: 7268449350634651738}
