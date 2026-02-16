@@ -4,7 +4,6 @@ public class TileAnimate : MonoBehaviour
 {
     public float pressDistance = 0.1f;
     public float pressSpeed = 3f;
-    //public GameObject targetObject;
     Vector3 startPos;
     bool isPressed = false;
     bool isAnimating = false;
