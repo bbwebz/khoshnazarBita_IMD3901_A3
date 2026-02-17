@@ -34,10 +34,14 @@ public class PlayerInteractionNet : NetworkBehaviour
                 if (Keyboard.current.iKey.wasPressedThisFrame)
                 {
                     if (IsHost)
+                    {
                         Debug.Log("HOST pressed I");
-
+                    }
                     else if (IsClient)
+                    {
                         Debug.Log("CLIENT pressed I");
+                        sendHoldRequestToServerRpc();
+                    }
                 }
 
 
@@ -62,5 +66,12 @@ public class PlayerInteractionNet : NetworkBehaviour
             }
         }
         crosshair_access.setInteract(false); //set it back to false if we look away from the object
+    }
+
+    [Rpc(SendTo.Server)]
+    public void sendHoldRequestToServerRpc()
+    {
+        Debug.Log("request to SERVER sent");
+        //pickupController_access.pickupObject(objectToPickup);
     }
 }
