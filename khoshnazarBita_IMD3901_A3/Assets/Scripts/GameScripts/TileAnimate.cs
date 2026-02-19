@@ -31,6 +31,7 @@ public class TileAnimate : MonoBehaviour
         }
     }
 
+
     public void Press()
     {
         Debug.Log("tile pressed");
@@ -38,5 +39,4 @@ public class TileAnimate : MonoBehaviour
         isAnimating = true;
     }
 
-   
 }

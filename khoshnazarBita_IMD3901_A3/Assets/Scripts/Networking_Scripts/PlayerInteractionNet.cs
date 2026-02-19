@@ -58,7 +58,6 @@ public class PlayerInteractionNet : NetworkBehaviour
                     }
                 }
                 
-
                 //Debug.Log("interact was set to true");
                 return;
             }

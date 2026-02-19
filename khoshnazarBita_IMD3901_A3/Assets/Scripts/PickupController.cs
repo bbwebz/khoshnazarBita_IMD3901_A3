@@ -80,7 +80,6 @@ public class PickupController : NetworkBehaviour
         heldObj.transform.rotation = holdArea.rotation;
     }
 
-
     [ServerRpc(RequireOwnership = false)]
     void PickupObjectServerRpc(ulong objectId, ulong playerClientId)
     {
@@ -140,6 +139,5 @@ public class PickupController : NetworkBehaviour
         heldObj = null;
         heldObjRB = null;
     }
-
 
 }
