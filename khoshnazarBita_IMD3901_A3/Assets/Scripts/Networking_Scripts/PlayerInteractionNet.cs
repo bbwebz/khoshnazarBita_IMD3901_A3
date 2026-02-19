@@ -44,9 +44,7 @@ public class PlayerInteractionNet : NetworkBehaviour
                     }
                 }
 
-
-
-                /*
+                
                 if (Keyboard.current.pKey.wasPressedThisFrame)
                 {
                     Debug.Log("tile pressed was: " + hit.collider.gameObject.name);
@@ -59,7 +57,7 @@ public class PlayerInteractionNet : NetworkBehaviour
                         tile.Press();
                     }
                 }
-                */
+                
 
                 //Debug.Log("interact was set to true");
                 return;
@@ -67,6 +65,10 @@ public class PlayerInteractionNet : NetworkBehaviour
         }
         crosshair_access.setInteract(false); //set it back to false if we look away from the object
     }
+
+    //when server, debug appeared on HOST console
+    //when owner, debug appeared on CLIENT console
+    //when ClientsAndHost, debug appeared on BOTH consoles
 
     [Rpc(SendTo.Server)]
     public void sendHoldRequestToServerRpc()

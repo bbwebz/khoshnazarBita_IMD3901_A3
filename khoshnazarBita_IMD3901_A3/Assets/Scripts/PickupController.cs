@@ -50,6 +50,7 @@ public class PickupController : MonoBehaviour
     /*----------------FUNCTIONS---------------*/
     void pickupObject(GameObject pickObj)
     {
+        //Debug.Log("pickup() called from server");
         if (pickObj.GetComponent<Rigidbody>())
         {
             heldObjRB = pickObj.GetComponent<Rigidbody>();
