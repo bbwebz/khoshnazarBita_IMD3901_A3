@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6795048928699815896}
   - component: {fileID: 5433857536334856552}
   - component: {fileID: 1405161824889474254}
-  - component: {fileID: 749537235149274389}
   - component: {fileID: 3005463624241160809}
   - component: {fileID: 1482150215584461614}
   - component: {fileID: 4897323459457589850}
@@ -89,22 +88,6 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &749537235149274389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123514706950494819}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c929709b364f1b448b2b6457d06c030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactRange: 5
-  playerCamera: {fileID: 7268449350634651738}
-  crosshair_access: {fileID: 469601055121027260}
-  pickupController_access: {fileID: 1664022502828155037}
 --- !u!114 &3005463624241160809
 MonoBehaviour:
   m_ObjectHideFlags: 0

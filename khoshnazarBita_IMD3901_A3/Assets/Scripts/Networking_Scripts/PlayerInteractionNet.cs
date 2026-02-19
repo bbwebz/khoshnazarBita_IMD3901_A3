@@ -69,11 +69,9 @@ public class PlayerInteractionNet : NetworkBehaviour
     //when server, debug appeared on HOST console
     //when owner, debug appeared on CLIENT console
     //when ClientsAndHost, debug appeared on BOTH consoles
-
     [Rpc(SendTo.Server)]
     public void sendHoldRequestToServerRpc()
     {
         Debug.Log("request to SERVER sent");
-        //pickupController_access.pickupObject(objectToPickup);
     }
 }

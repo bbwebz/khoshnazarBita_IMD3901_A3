@@ -51,27 +51,11 @@ public class PickupController : NetworkBehaviour
     /*----------------FUNCTIONS---------------*/
     void pickupObject(GameObject pickObj)
     {
-        //Debug.Log("pickup() called from server");
-        /* if (pickObj.GetComponent<Rigidbody>())
-         {
-             heldObjRB = pickObj.GetComponent<Rigidbody>();
-             //make the object float
-             heldObjRB.useGravity = false;
-             heldObjRB.linearDamping = 10;
-             heldObjRB.constraints = RigidbodyConstraints.FreezeRotation; //avoids spinning
+        if (!IsOwner) return; //only the player controlling this can request pickup
 
-             heldObjRB.transform.parent = holdArea; //parent it to the hold area
-
-             heldObj = pickObj;
-         }*/
-
-        if (!IsOwner) return; // only the player controlling this can request pickup
-
-        NetworkObject netObj = pickObj.GetComponent<NetworkObject>();
-        if (netObj == null) return; // only NetworkObjects
-
-        PickupObjectServerRpc(netObj.NetworkObjectId, OwnerClientId); // ask server to pick it up
-
+        NetworkObject netObj = pickObj.GetComponent<NetworkObject>(); //get the network object of the pickObj
+        if (netObj == null) return;
+        PickupObjectServerRpc(netObj.NetworkObjectId, OwnerClientId); //ask server to pick it up with RPC
     }
 
     void dropObject()
@@ -79,11 +63,11 @@ public class PickupController : NetworkBehaviour
         if (!IsOwner) return;
         if (heldObj == null) return;
 
-        NetworkObject netObj = heldObj.GetComponent<NetworkObject>();
+        NetworkObject netObj = heldObj.GetComponent<NetworkObject>(); //get network object of heldObj
         if (netObj != null)
             DropObjectServerRpc(netObj.NetworkObjectId);
 
-        // Clear local reference immediately so moveObject() stops running
+        //clear local reference
         heldObj = null;
         heldObjRB = null;
     }
@@ -91,29 +75,23 @@ public class PickupController : NetworkBehaviour
     void moveObject()
     {
         if (heldObj == null) return;
-
-        // Snap object instantly to hold area
+        //snap object instantly to hold area
         heldObj.transform.position = holdArea.position;
         heldObj.transform.rotation = holdArea.rotation;
     }
 
 
-
     [ServerRpc(RequireOwnership = false)]
     void PickupObjectServerRpc(ulong objectId, ulong playerClientId)
     {
+        //retrieve the object's network object from the server's record of spawned objects
         NetworkObject netObj = NetworkManager.Singleton.SpawnManager.SpawnedObjects[objectId];
 
-        // Transfer ownership so the client can interact with it
-        netObj.ChangeOwnership(playerClientId);
+        //transfer ownership so the client can interact with it
+        netObj.ChangeOwnership(playerClientId); //give client ownership access
 
-        // Reparent to player's hold area
+        //parent the object to the player's hold area
         netObj.transform.SetParent(NetworkManager.Singleton.ConnectedClients[playerClientId].PlayerObject.transform);
-
-        // Optional: reset local position
-        //netObj.transform.localPosition = Vector3.zero;
-
-        // Optionally store reference on server if needed
 
         AssignHeldObjectClientRpc(netObj.NetworkObjectId);
     }
@@ -123,21 +101,19 @@ public class PickupController : NetworkBehaviour
     {
         NetworkObject netObj = NetworkManager.Singleton.SpawnManager.SpawnedObjects[objectId];
 
-        // Unparent on server
+        //unparent the object
         netObj.transform.SetParent(null);
 
         Rigidbody rb = netObj.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.useGravity = true;                  // enable gravity
-            rb.linearVelocity = Vector3.zero;            // clear any previous velocity
-            rb.angularVelocity = Vector3.zero;     // clear rotation
-            //rb.drag = 0;                           // reset linear damping
-            //rb.angularDrag = 0.05f;               // reset angular damping
-            rb.constraints = RigidbodyConstraints.None; // allow full movement
+            //clear the rigidbody's attributes
+            rb.useGravity = true; //enable gravity again
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero; 
+            rb.constraints = RigidbodyConstraints.None; //allow full movement
         }
         ClearHeldObjectClientRpc();
-
     }
 
     [ClientRpc]
@@ -147,21 +123,20 @@ public class PickupController : NetworkBehaviour
         heldObj = netObj.gameObject;
         heldObjRB = heldObj.GetComponent<Rigidbody>();
 
+        //snap object instantly to hold area
         heldObj.transform.position = holdArea.position;
         heldObj.transform.rotation = holdArea.rotation;
 
         if (heldObjRB != null)
         {
-            heldObjRB.useGravity = false;
-            
-            //    heldObjRB.linearDamping = 10;
-            //    heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;
+            heldObjRB.useGravity = false; //turn gravity off so it floats in the air
         }
     }
 
     [ClientRpc]
     void ClearHeldObjectClientRpc()
     {
+        //reset the held object from the client
         heldObj = null;
         heldObjRB = null;
     }
