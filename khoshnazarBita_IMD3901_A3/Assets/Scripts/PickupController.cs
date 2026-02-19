@@ -90,15 +90,16 @@ public class PickupController : NetworkBehaviour
 
     void moveObject()
     {
-        if (heldObj == null) return; // stops dragging after drop
+        if (heldObj == null || heldObjRB == null) return;
 
-        // optional: physics movement
-        if (Vector3.Distance(heldObj.transform.position, holdArea.position) > 0.1f)
-        {
-            Vector3 moveDirection = (holdArea.position - heldObj.transform.position);
-            heldObjRB.AddForce(moveDirection * pickupForce);
-        }
+
+
+        Vector3 moveDirection = holdArea.position - heldObj.transform.position;
+        //heldObjRB.linearVelocity = moveDirection * pickupForce * Time.deltaTime; // or AddForce
+
+        heldObjRB.linearVelocity = moveDirection * pickupForce * Time.deltaTime;
     }
+
 
 
     [ServerRpc(RequireOwnership = false)]
@@ -116,6 +117,8 @@ public class PickupController : NetworkBehaviour
         //netObj.transform.localPosition = Vector3.zero;
 
         // Optionally store reference on server if needed
+
+        AssignHeldObjectClientRpc(netObj.NetworkObjectId);
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -130,12 +133,35 @@ public class PickupController : NetworkBehaviour
         Rigidbody rb = netObj.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            //rb.linearVelocity = Vector3.zero;
+            //rb.angularVelocity = Vector3.zero;
             rb.useGravity = true;
+        }
+        ClearHeldObjectClientRpc();
+
+    }
+
+    [ClientRpc]
+    void AssignHeldObjectClientRpc(ulong objectId)
+    {
+        NetworkObject netObj = NetworkManager.Singleton.SpawnManager.SpawnedObjects[objectId];
+        heldObj = netObj.gameObject;
+        heldObjRB = heldObj.GetComponent<Rigidbody>();
+
+        if (heldObjRB != null)
+        {
+            heldObjRB.useGravity = false;
+             heldObjRB.linearDamping = 10;
+            heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;
         }
     }
 
+    [ClientRpc]
+    void ClearHeldObjectClientRpc()
+    {
+        heldObj = null;
+        heldObjRB = null;
+    }
 
 
 }
