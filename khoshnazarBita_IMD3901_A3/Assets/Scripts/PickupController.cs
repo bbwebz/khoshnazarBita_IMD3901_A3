@@ -90,14 +90,11 @@ public class PickupController : NetworkBehaviour
 
     void moveObject()
     {
-        if (heldObj == null || heldObjRB == null) return;
+        if (heldObj == null) return;
 
-
-
-        Vector3 moveDirection = holdArea.position - heldObj.transform.position;
-        //heldObjRB.linearVelocity = moveDirection * pickupForce * Time.deltaTime; // or AddForce
-
-        heldObjRB.linearVelocity = moveDirection * pickupForce * Time.deltaTime;
+        // Snap object instantly to hold area
+        heldObj.transform.position = holdArea.position;
+        heldObj.transform.rotation = holdArea.rotation;
     }
 
 
@@ -129,13 +126,15 @@ public class PickupController : NetworkBehaviour
         // Unparent on server
         netObj.transform.SetParent(null);
 
-        // Optional: reset rotation/position or velocity
         Rigidbody rb = netObj.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            //rb.linearVelocity = Vector3.zero;
-            //rb.angularVelocity = Vector3.zero;
-            rb.useGravity = true;
+            rb.useGravity = true;                  // enable gravity
+            rb.linearVelocity = Vector3.zero;            // clear any previous velocity
+            rb.angularVelocity = Vector3.zero;     // clear rotation
+            //rb.drag = 0;                           // reset linear damping
+            //rb.angularDrag = 0.05f;               // reset angular damping
+            rb.constraints = RigidbodyConstraints.None; // allow full movement
         }
         ClearHeldObjectClientRpc();
 
@@ -148,11 +147,15 @@ public class PickupController : NetworkBehaviour
         heldObj = netObj.gameObject;
         heldObjRB = heldObj.GetComponent<Rigidbody>();
 
+        heldObj.transform.position = holdArea.position;
+        heldObj.transform.rotation = holdArea.rotation;
+
         if (heldObjRB != null)
         {
             heldObjRB.useGravity = false;
-             heldObjRB.linearDamping = 10;
-            heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;
+            
+            //    heldObjRB.linearDamping = 10;
+            //    heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;
         }
     }
 
