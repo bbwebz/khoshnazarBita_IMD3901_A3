@@ -1,7 +1,8 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PickupController : MonoBehaviour
+public class PickupController : NetworkBehaviour
 {
     [SerializeField] Transform holdArea; //will be parented to this
 
@@ -60,9 +61,11 @@ public class PickupController : MonoBehaviour
             heldObjRB.constraints = RigidbodyConstraints.FreezeRotation; //avoids spinning
 
             heldObjRB.transform.parent = holdArea; //parent it to the hold area
+            
             heldObj = pickObj;
         }
     }
+
     void dropObject()
     {
         //make the object float
