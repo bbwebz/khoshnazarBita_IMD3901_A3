@@ -29,7 +29,7 @@ public class PlayerInteractionNet : NetworkBehaviour
             if (hit.collider.CompareTag("Interactable"))
             {
                 //checking if the ray hits something with a collider that is interactable
-                crosshair_access.setInteract(true);
+                crosshair_access.setInteractServerRpc(true);
 
                 if (Keyboard.current.iKey.wasPressedThisFrame)
                 {
@@ -58,11 +58,12 @@ public class PlayerInteractionNet : NetworkBehaviour
                     }
                 }
                 
+
                 //Debug.Log("interact was set to true");
                 return;
             }
         }
-        crosshair_access.setInteract(false); //set it back to false if we look away from the object
+        crosshair_access.setInteractServerRpc(false); //set it back to false if we look away from the object
     }
 
     //when server, debug appeared on HOST console

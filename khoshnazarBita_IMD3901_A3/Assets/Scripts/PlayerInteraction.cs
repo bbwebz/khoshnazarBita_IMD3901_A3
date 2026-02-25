@@ -22,7 +22,7 @@ public class PlayerInteraction : MonoBehaviour
             if (hit.collider.CompareTag("Interactable"))
             {
                 //checking if the ray hits something with a collider that is interactable
-                crosshair_access.setInteract(true);
+                crosshair_access.setInteractServerRpc(true);
 
                 if (Keyboard.current.pKey.wasPressedThisFrame)
                 {
@@ -41,6 +41,6 @@ public class PlayerInteraction : MonoBehaviour
                 return;
             }
         }
-        crosshair_access.setInteract(false); //set it back to false if we look away from the object
+        crosshair_access.setInteractServerRpc(false); //set it back to false if we look away from the object
     }
 }

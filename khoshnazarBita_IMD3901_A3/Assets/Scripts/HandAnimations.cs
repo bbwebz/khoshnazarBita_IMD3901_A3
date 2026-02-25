@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class HandAnimations : MonoBehaviour
+public class HandAnimations : NetworkBehaviour
 {
     public InputActionProperty triggerValue;
     public InputActionProperty gripValue;
@@ -8,12 +9,15 @@ public class HandAnimations : MonoBehaviour
 
     void Update()
     {
-        //read the grip and trigger values
-        float trigger = triggerValue.action.ReadValue<float>();
-        float grip = gripValue.action.ReadValue<float>();
+        if (IsOwner)
+        {
+            //read the grip and trigger values
+            float trigger = triggerValue.action.ReadValue<float>();
+            float grip = gripValue.action.ReadValue<float>();
 
-        //change the trigger value in the animator
-        handAnimator.SetFloat("Trigger", trigger);
-        handAnimator.SetFloat("Grip", grip);
+            //change the trigger value in the animator
+            handAnimator.SetFloat("Trigger", trigger);
+            handAnimator.SetFloat("Grip", grip);
+        }
     }
 }
