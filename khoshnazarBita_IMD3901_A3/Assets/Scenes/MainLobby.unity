@@ -5876,9 +5876,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1024285646356325192, guid: 900fb3797faee0849bc176f9177d9f3f, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024285646356325192, guid: 900fb3797faee0849bc176f9177d9f3f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2824795176778561841, guid: 900fb3797faee0849bc176f9177d9f3f, type: 3}
       propertyPath: m_Name
       value: testCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363220302767394901, guid: 900fb3797faee0849bc176f9177d9f3f, type: 3}
+      propertyPath: SyncScaleX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363220302767394901, guid: 900fb3797faee0849bc176f9177d9f3f, type: 3}
+      propertyPath: SyncScaleY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363220302767394901, guid: 900fb3797faee0849bc176f9177d9f3f, type: 3}
+      propertyPath: SyncScaleZ
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6885689032081235582, guid: 900fb3797faee0849bc176f9177d9f3f, type: 3}
       propertyPath: GlobalObjectIdHash
