@@ -352,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &147481152
 Transform:
   m_ObjectHideFlags: 0
@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &268540407
@@ -812,6 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &287915419
@@ -1008,6 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &377280352
@@ -1721,6 +1724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &588435035
@@ -2066,6 +2070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &675044017
@@ -2446,6 +2451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &807187624
@@ -3258,6 +3264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &1230927032
@@ -3592,6 +3599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &1246941024
@@ -3877,8 +3885,8 @@ GameObject:
   - component: {fileID: 1297945471}
   - component: {fileID: 1297945470}
   - component: {fileID: 1297945469}
-  - component: {fileID: 1297945472}
   - component: {fileID: 1297945473}
+  - component: {fileID: 1297945472}
   - component: {fileID: 1297945474}
   m_Layer: 0
   m_Name: Tile2
@@ -3988,6 +3996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &1297945473
@@ -4184,6 +4193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &1368381104
@@ -4380,6 +4390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &1478454560
@@ -4645,6 +4656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &1632142432
@@ -5059,6 +5071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &1663003351
@@ -5288,6 +5301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &1833596550
@@ -5725,6 +5739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &2087989252
@@ -5921,6 +5936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94999409a432ba845ac93b9b8aaaf90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   pressDistance: 0.3
   pressSpeed: 2
 --- !u!114 &2110801949

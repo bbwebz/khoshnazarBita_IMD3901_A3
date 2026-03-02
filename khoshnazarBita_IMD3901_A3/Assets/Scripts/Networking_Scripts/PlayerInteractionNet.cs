@@ -51,11 +51,11 @@ public class PlayerInteractionNet : NetworkBehaviour
                     //tileAnimate_access.Press();
 
                     //trigger the press function only for the tile that was hit with the ray
-                    TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
-                    if (tile != null)
-                    {
+                    //TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
+                    //if (tile != null)
+                    //{
                         //tile.Press();
-                    }
+                    //}
                 }
                 
 

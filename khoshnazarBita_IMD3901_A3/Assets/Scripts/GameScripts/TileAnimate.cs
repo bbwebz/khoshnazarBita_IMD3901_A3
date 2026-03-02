@@ -59,7 +59,7 @@ public class TileAnimate : NetworkBehaviour
     {
         isPressed = true;
         isAnimating = true;
-        Debug.Log("tile pressed");
+        //Debug.Log("tile pressed");
     }
 
     [ServerRpc(RequireOwnership = false)]
