@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5189289521261584996}
   - component: {fileID: 7339966855227636890}
   m_Layer: 0
-  m_Name: testCube
+  m_Name: testCubeVR
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
