@@ -54,7 +54,7 @@ public class PlayerInteractionNet : NetworkBehaviour
                     TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
                     if (tile != null)
                     {
-                        tile.Press();
+                        //tile.Press();
                     }
                 }
                 

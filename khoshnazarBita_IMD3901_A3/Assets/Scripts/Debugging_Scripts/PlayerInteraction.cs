@@ -33,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
                     TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
                     if (tile != null)
                     {
-                        tile.Press();
+                        //tile.Press();
                     }
                 }
 
