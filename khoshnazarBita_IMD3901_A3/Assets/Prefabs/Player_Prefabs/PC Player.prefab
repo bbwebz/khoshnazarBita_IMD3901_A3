@@ -317,13 +317,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567635332458221024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 827d433f19ac0c2409a70daf5c6b8296, type: 3}
+  m_Script: {fileID: 11500000, guid: 371a276e32a6e4d4c94095cc2b1c02ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   holdArea: {fileID: 6868048652202225694}
   pickupRange: 5
-  pickupForce: 1000
+  pickupForce: 150
 --- !u!1 &5077842472569108115
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2926183dce30543afd7f299ad69387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   crosshairIMG: {fileID: 1128380002992802821}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 0, g: 0, b: 1, a: 1}
