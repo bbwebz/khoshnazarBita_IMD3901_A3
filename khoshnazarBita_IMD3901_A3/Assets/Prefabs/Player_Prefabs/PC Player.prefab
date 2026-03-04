@@ -169,6 +169,8 @@ MonoBehaviour:
   playerCamera: {fileID: 7268449350634651738}
   crosshair_access: {fileID: 469601055121027260}
   pickupController_access: {fileID: 1664022502828155037}
+  audioManager_access: {fileID: 0}
+  rightHandRay: {fileID: 0}
 --- !u!1 &1567635332458221024
 GameObject:
   m_ObjectHideFlags: 0

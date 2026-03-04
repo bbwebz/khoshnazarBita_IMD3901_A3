@@ -13,8 +13,7 @@ public class PlayerInteractionNet : NetworkBehaviour
 
     public Crosshair crosshair_access;
     public PickupController pickupController_access;
-    //public TileAnimate tileAnimate_access;
-
+    public AudioManager audioManager_access;
     public XRRayInteractor rightHandRay;
 
     void Update()
@@ -72,7 +71,8 @@ public class PlayerInteractionNet : NetworkBehaviour
                 if (Keyboard.current.pKey.wasPressedThisFrame)
                 {
                     Debug.Log("tile pressed was: " + hit.collider.gameObject.name);
-
+                    string tileName = hit.collider.gameObject.name;
+                    
                     //animate only the tile that was pressed/looked at
                     TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
 
@@ -82,12 +82,16 @@ public class PlayerInteractionNet : NetworkBehaviour
                         {
                             //if host, directly animate the tile
                             tile.AnimateTile();
+                            //play the sound and keep track of which tile player1 played
+                            audioManager_access.playTileSound(tileName, 0);
                         }
                         
                         if (IsClient)
                         {
                             //if client, request for ownership, animate the tile and synch
                             tile.PressTileServerRpc(tile.NetworkObjectId);
+                            //play the sound and keep track of which tile player2 played
+                            audioManager_access.playTileSound(tileName, 1);
                         }
                     }
 
