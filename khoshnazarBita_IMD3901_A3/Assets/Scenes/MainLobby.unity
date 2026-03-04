@@ -2155,7 +2155,7 @@ PrefabInstance:
     - target: {fileID: 7099724425186548248, guid: 98254f84fb3e0ae44adcbcce85e4c661, type: 3}
       propertyPath: NetworkConfig.PlayerPrefab
       value: 
-      objectReference: {fileID: 123514706950494819, guid: be84fb2b9b204724f804aab23ab958b7, type: 3}
+      objectReference: {fileID: 8842678829648397640, guid: 640199cf36a3df842b2692f6262ff007, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2175,7 +2175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3189,6 +3189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPCPrefab: {fileID: 123514706950494819, guid: be84fb2b9b204724f804aab23ab958b7, type: 3}
+  playerVRPrefab: {fileID: 8842678829648397640, guid: 640199cf36a3df842b2692f6262ff007, type: 3}
   AudioManager: {fileID: 1488186891}
 --- !u!1 &1659013271
 GameObject:

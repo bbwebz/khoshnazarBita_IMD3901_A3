@@ -11,6 +11,8 @@ public class VRControllerInputNet : NetworkBehaviour
     //access the right hand ray interactors of both host and client 
     private XRRayInteractor rightHandRay;
 
+    public AudioManager audioManager_access;
+
     void Start()
     {
         if (!IsOwner) return; // Only get the local player's hand
@@ -44,13 +46,30 @@ public class VRControllerInputNet : NetworkBehaviour
                 // Check if the object has the tag "Interactable"
                 if (hit.collider.CompareTag("Interactable"))
                 {
-                    Debug.Log($"Trigger pressed! Ray hit interactable: {hit.collider.name}");
-                    
+                    Debug.Log("Trigger pressed! Ray hit interactable: " + hit.collider.name);
+                    string tileName = hit.collider.gameObject.name;
 
-                    //AUDIO
+                    //animate only the tile that was pressed/looked at
+                    TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
 
+                    if (tile != null)
+                    {
+                        if (IsHost)
+                        {
+                            //if host, directly animate the tile
+                            tile.AnimateTile();
+                            //play the sound and keep track of which tile player1 played
+                            audioManager_access.playTileSoundServerRpc(tileName, 0);
+                        }
 
-
+                        if (IsClient)
+                        {
+                            //if client, request for ownership, animate the tile and synch
+                            tile.PressTileServerRpc(tile.NetworkObjectId);
+                            //play the sound and keep track of which tile player2 played
+                            audioManager_access.playTileSoundServerRpc(tileName, 1);
+                        }
+                    }
                 }
             }
         }
