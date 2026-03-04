@@ -1,6 +1,10 @@
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+
 
 public class PlayerInteractionNet : NetworkBehaviour
 {
@@ -10,7 +14,9 @@ public class PlayerInteractionNet : NetworkBehaviour
     public Crosshair crosshair_access;
     public PickupController pickupController_access;
     //public TileAnimate tileAnimate_access;
-   
+
+    public XRRayInteractor rightHandRay;
+
     void Update()
     {
         //check to see if its the HOST
@@ -18,6 +24,24 @@ public class PlayerInteractionNet : NetworkBehaviour
         {
             return;
         }
+
+        //--------------------------------------------------------------------------------------------
+        //VR input with right hand ray
+        //var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
+        //UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+
+        /*if (rightHandDevices.Count == 1)
+        {
+            UnityEngine.XR.InputDevice device = rightHandDevices[0];
+
+            bool triggerValue;
+            if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
+            {
+                Debug.Log("Trigger button is pressed.");
+            }
+        }*/
+        //----------------------------------------------------------------------------
+
 
         //creating a ray that shoots out of the camera to detect objects in front of us
         //we want the ray to be in front of us
@@ -31,6 +55,7 @@ public class PlayerInteractionNet : NetworkBehaviour
                 //checking if the ray hits something with a collider that is interactable
                 crosshair_access.setInteractServerRpc(true);
 
+                //PC INPUT with crosshair ray
                 if (Keyboard.current.iKey.wasPressedThisFrame)
                 {
                     if (IsHost)
@@ -43,7 +68,6 @@ public class PlayerInteractionNet : NetworkBehaviour
                         sendHoldRequestToServerRpc();
                     }
                 }
-
                 
                 if (Keyboard.current.pKey.wasPressedThisFrame)
                 {

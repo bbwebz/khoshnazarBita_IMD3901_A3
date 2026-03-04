@@ -2382,6 +2382,7 @@ GameObject:
   - component: {fileID: 7264347443955954498}
   - component: {fileID: 6810792664414802797}
   - component: {fileID: 3270984210336436470}
+  - component: {fileID: 3356495081318651122}
   m_Layer: 0
   m_Name: VR Player
   m_TagString: Player
@@ -2547,6 +2548,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   VrCamera: {fileID: 101520965842570519}
+--- !u!114 &3356495081318651122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842678829648397640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49e11399868d464f828ee5c0c6fa654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  isTriggerPressed:
+    m_InternalValue: 0
 --- !u!1001 &3143224214463510244
 PrefabInstance:
   m_ObjectHideFlags: 0
