@@ -48,9 +48,24 @@ public class PlayerInteractionNet : NetworkBehaviour
                 if (Keyboard.current.pKey.wasPressedThisFrame)
                 {
                     Debug.Log("tile pressed was: " + hit.collider.gameObject.name);
-                    
-                    //animate only the tile that was pressed/looked at
 
+                    //animate only the tile that was pressed/looked at
+                    TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
+
+                    if (tile != null)
+                    {
+                        if (IsHost)
+                        {
+                            //if host, directly animate the tile
+                            tile.AnimateTile();
+                        }
+                        
+                        if (IsClient)
+                        {
+                            //if client, request for ownership, animate the tile and synch
+                            tile.PressTileServerRpc(tile.NetworkObjectId);
+                        }
+                    }
 
                 }
                 

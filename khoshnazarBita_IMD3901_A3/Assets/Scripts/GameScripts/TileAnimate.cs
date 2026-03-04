@@ -24,6 +24,7 @@ public class TileAnimate : NetworkBehaviour
 
     void Update()
     {
+        /*
         if (Keyboard.current.pKey.wasPressedThisFrame) //if p was pressed
         {
             //isPressed = true;
@@ -39,9 +40,10 @@ public class TileAnimate : NetworkBehaviour
                 PressTileServerRpc(netObj_tile.NetworkObjectId);
             }
         }
+        */
 
         //animate the tile up and down once its been pressed
-        if (isAnimating && IsOwner)
+        if (isAnimating)
         {
             Vector3 target = isPressed ? startPos - Vector3.up * pressDistance : startPos;
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, target, pressSpeed * Time.deltaTime);
@@ -67,16 +69,26 @@ public class TileAnimate : NetworkBehaviour
         isAnimating = true;
     }
 
-    [ServerRpc(RequireOwnership = false)]
+    [ServerRpc(RequireOwnership = false)] //client requests to server to press the tile
     public void PressTileServerRpc(ulong objectId, ServerRpcParams rpcParams = default)
     {
         if (netObj_tile.TryGetComponent<NetworkObject>(out netObj_tile))
         {
             //transfer ownership so the client can interact with it (playerId here is SenderClientId)
-            netObj_tile.ChangeOwnership(rpcParams.Receive.SenderClientId); //give client ownership access
+            netObj_tile.ChangeOwnership(rpcParams.Receive.SenderClientId);
 
             //animate the tile now that the client has ownership over it
+            AnimateTileClientRpc();
+        }
+    }
+
+    [ClientRpc] //run the tile animation on the client
+    private void AnimateTileClientRpc()
+    {
+        if (IsOwner)
+        {
             AnimateTile();
+            //Debug.Log("CLIENT RPC ANIMATE CALLED");
         }
     }
 
