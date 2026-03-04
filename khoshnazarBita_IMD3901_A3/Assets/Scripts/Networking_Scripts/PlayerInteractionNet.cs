@@ -48,14 +48,10 @@ public class PlayerInteractionNet : NetworkBehaviour
                 if (Keyboard.current.pKey.wasPressedThisFrame)
                 {
                     Debug.Log("tile pressed was: " + hit.collider.gameObject.name);
-                    //tileAnimate_access.Press();
+                    
+                    //animate only the tile that was pressed/looked at
 
-                    //trigger the press function only for the tile that was hit with the ray
-                    //TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
-                    //if (tile != null)
-                    //{
-                        //tile.Press();
-                    //}
+
                 }
                 
 
