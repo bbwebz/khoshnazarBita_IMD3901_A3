@@ -83,7 +83,7 @@ public class PlayerInteractionNet : NetworkBehaviour
                             //if host, directly animate the tile
                             tile.AnimateTile();
                             //play the sound and keep track of which tile player1 played
-                            audioManager_access.playTileSound(tileName, 0);
+                            audioManager_access.playTileSoundServerRpc(tileName, 0);
                         }
                         
                         if (IsClient)
@@ -91,7 +91,7 @@ public class PlayerInteractionNet : NetworkBehaviour
                             //if client, request for ownership, animate the tile and synch
                             tile.PressTileServerRpc(tile.NetworkObjectId);
                             //play the sound and keep track of which tile player2 played
-                            audioManager_access.playTileSound(tileName, 1);
+                            audioManager_access.playTileSoundServerRpc(tileName, 1);
                         }
                     }
 

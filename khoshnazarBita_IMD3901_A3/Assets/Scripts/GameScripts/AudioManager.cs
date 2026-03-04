@@ -10,8 +10,8 @@ public class AudioManager : NetworkBehaviour
     [Header("---- Audio Clip ----")]
     //public AudioClip background;
     public AudioClip Tile1;
-    public AudioClip Tile2;
-    public AudioClip Tile3;
+    //public AudioClip Tile2;
+    //public AudioClip Tile3;
 
     //store strings of which tile each player pressed (for comparison later on)
     string player1Sound; 
@@ -25,13 +25,14 @@ public class AudioManager : NetworkBehaviour
     }
     */
 
+
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
     }
 
-
-    public void playTileSound(string tileName, int whoPressed)
+    [ServerRpc(RequireOwnership = false)]
+    public void playTileSoundServerRpc(string tileName, int whoPressed)
     {
         //if whoPressed = 0 it was the host
         //if whoPressed = 1 it was the client
@@ -51,18 +52,8 @@ public class AudioManager : NetworkBehaviour
             case "Tile1":
                 PlaySFX(Tile1);
                 break;
-            case "Tile2":
-                PlaySFX(Tile2);
-                break;
-            case "Tile3":
-                PlaySFX(Tile3);
-                break;
+            
         }
-
-
-
-
-
     }
 
 
