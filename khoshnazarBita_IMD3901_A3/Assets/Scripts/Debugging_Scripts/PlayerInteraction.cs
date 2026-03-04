@@ -30,11 +30,11 @@ public class PlayerInteraction : MonoBehaviour
                     //tileAnimate_access.Press();
 
                     //trigger the press function only for the tile that was hit with the ray
-                    TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
-                    if (tile != null)
-                    {
-                        tile.Press();
-                    }
+                    //TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
+                    //if (tile != null)
+                    //{
+                        //tile.Press();
+                    //}
                 }
 
                 //Debug.Log("interact was set to true");
