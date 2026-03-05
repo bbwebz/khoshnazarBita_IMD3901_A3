@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5433857536334856552}
   - component: {fileID: 1405161824889474254}
   - component: {fileID: 3005463624241160809}
-  - component: {fileID: 1482150215584461614}
   - component: {fileID: 4897323459457589850}
+  - component: {fileID: 6837257275651132847}
   m_Layer: 0
   m_Name: PC Player
   m_TagString: Player
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 123514706950494819}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: -13.03, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1.2781, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -134,24 +134,6 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &1482150215584461614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123514706950494819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0975640cbffd3fc4496fef90eabeda24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  speed: 5
-  mouseSensitivity: 8
-  charController: {fileID: 5433857536334856552}
-  camTransform: {fileID: 7336117257499632179}
-  PcCamera: {fileID: 7268449350634651738}
 --- !u!114 &4897323459457589850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +153,26 @@ MonoBehaviour:
   pickupController_access: {fileID: 1664022502828155037}
   audioManager_access: {fileID: 0}
   rightHandRay: {fileID: 0}
+--- !u!114 &6837257275651132847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123514706950494819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0975640cbffd3fc4496fef90eabeda24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  speed: 5
+  mouseSensitivity: 8
+  charController: {fileID: 5433857536334856552}
+  camTransform: {fileID: 7336117257499632179}
+  PcCamera: {fileID: 7268449350634651738}
+  pointP1: {fileID: 7830416994058990565, guid: 5f883ccf58f06ca49a15d9ccbe275513, type: 3}
+  pointP2: {fileID: 8221256171253812295, guid: be9acf9d07f58bd4bb50250c5f95d8d5, type: 3}
 --- !u!1 &1567635332458221024
 GameObject:
   m_ObjectHideFlags: 0
