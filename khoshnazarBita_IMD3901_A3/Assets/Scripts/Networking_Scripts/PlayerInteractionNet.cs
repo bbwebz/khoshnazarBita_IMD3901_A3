@@ -24,8 +24,9 @@ public class PlayerInteractionNet : NetworkBehaviour
             return;
         }
 
-        //--------------------------------------------------------------------------------------------
-        //VR input with right hand ray
+        //------------------------------------------------------------------------------
+        //VR input with right hand ray - this is for the real controller trigger value
+        //for this project i have decidied to use the T key for mock HMD instead
         //var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
         //UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
 
