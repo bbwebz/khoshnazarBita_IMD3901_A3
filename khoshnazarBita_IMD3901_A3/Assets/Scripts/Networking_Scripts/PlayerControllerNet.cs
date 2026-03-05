@@ -15,7 +15,6 @@ public class PlayerControllerNet : NetworkBehaviour
     public Transform pointP1;
     public Transform pointP2;
 
-
     public override void OnNetworkSpawn()
     {
         if (!IsOwner)

@@ -50,10 +50,16 @@ public class AudioManager : NetworkBehaviour
             player1Sound = tileName;
             Debug.Log("host played " + tileName + " sound");
         }
-        else if (whoPressed == 1)
+        
+        if (whoPressed == 1)
         {
             player2Sound = tileName;
             Debug.Log("client played " + tileName + " sound");
+        }
+
+        if (player1Sound == player2Sound)
+        {
+            Debug.Log("players played the SAME sound");
         }
 
         //play sound according to which tile was pressed (each tile plays a unique note)
