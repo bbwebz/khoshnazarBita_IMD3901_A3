@@ -21,48 +21,35 @@ public class VRControllerInputNet : NetworkBehaviour
         rightHandRay = GetComponentInChildren<XRRayInteractor>();
     }
 
+
     void Update()
     {
         if (!IsOwner) return;
 
-        bool triggerPressed = false;
-
-        //for mock HMD
-        if (Keyboard.current.tKey.wasPressedThisFrame)
-        {
-            triggerPressed = true;
-        }
-        //send request to server to update the network variable (bool)
-        if (triggerPressed && !isTriggerPressed.Value)
-        {
-            TriggerPressedServerRpc();
-        }
-
-        if (triggerPressed)
+        if (Keyboard.current.tKey.wasPressedThisFrame) //for mock HMD
         {
             //check to see if the ray is colliding with something (like in pc)
             if (rightHandRay.TryGetCurrent3DRaycastHit(out RaycastHit hit))
             {
-                // Check if the object has the tag "Interactable"
+                //check if the object has the tag "Interactable"
                 if (hit.collider.CompareTag("Interactable"))
                 {
-                    Debug.Log("Trigger pressed! Ray hit interactable: " + hit.collider.name);
-                    string tileName = hit.collider.gameObject.name;
+                    Debug.Log("Trigger pressed! Ray hit: " + hit.collider.name);
 
+                    string tileName = hit.collider.gameObject.name;
                     //animate only the tile that was pressed/looked at
                     TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
 
                     if (tile != null)
                     {
-                        if (IsHost)
+                        if (IsServer)
                         {
                             //if host, directly animate the tile
                             tile.AnimateTile();
                             //play the sound and keep track of which tile player1 played
                             audioManager_access.playTileSoundServerRpc(tileName, 0);
                         }
-
-                        if (IsClient)
+                        else if (IsClient)
                         {
                             //if client, request for ownership, animate the tile and synch
                             tile.PressTileServerRpc(tile.NetworkObjectId);
@@ -75,6 +62,8 @@ public class VRControllerInputNet : NetworkBehaviour
         }
     }
 
+
+    /*
     [ServerRpc(RequireOwnership = false)]
     void TriggerPressedServerRpc()
     {
@@ -84,5 +73,6 @@ public class VRControllerInputNet : NetworkBehaviour
         //reset the boolean on the server
         isTriggerPressed.Value = false;
     }
+    */
 
 }

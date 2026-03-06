@@ -79,7 +79,7 @@ public class PlayerInteractionNet : NetworkBehaviour
 
                     if (tile != null)
                     {
-                        if (IsHost)
+                        if (NetworkManager.Singleton.LocalClientId == 0)
                         {
                             //if host, directly animate the tile
                             tile.AnimateTile();
@@ -87,7 +87,7 @@ public class PlayerInteractionNet : NetworkBehaviour
                             audioManager_access.playTileSoundServerRpc(tileName, 0);
                         }
                         
-                        if (IsClient)
+                        if (NetworkManager.Singleton.LocalClientId == 1)
                         {
                             //if client, request for ownership, animate the tile and synch
                             tile.PressTileServerRpc(tile.NetworkObjectId);

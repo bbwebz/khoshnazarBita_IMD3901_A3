@@ -2,7 +2,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : NetworkBehaviour
+public class PlayerControllerNet : NetworkBehaviour
 {
     public float speed = 5.0f;
     public float mouseSensitivity = 2.0f;
@@ -11,6 +11,9 @@ public class PlayerController : NetworkBehaviour
     private float xRotation = 0.0f;
 
     public Camera PcCamera;
+
+    public Transform pointP1;
+    public Transform pointP2;
 
     public override void OnNetworkSpawn()
     {
@@ -21,7 +24,21 @@ public class PlayerController : NetworkBehaviour
 
         Cursor.lockState = CursorLockMode.Locked; //locks the cursor to the screen, so it moves with the camera
         Cursor.visible = false;
+
+        //spawning the players at their given spawn points
+        if (NetworkManager.Singleton.LocalClientId == 0) //host
+        {
+            Debug.Log("placed host at spawn point");
+            gameObject.transform.transform.position = pointP1.position;
+        }
+        else if (NetworkManager.Singleton.LocalClientId == 1) //client
+        {
+            Debug.Log("placed client at spawn point");
+            gameObject.transform.transform.position = pointP2.position;
+        }
+
     }
+
 
     void Update()
     {

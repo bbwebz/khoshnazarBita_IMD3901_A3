@@ -2383,6 +2383,7 @@ GameObject:
   - component: {fileID: 6810792664414802797}
   - component: {fileID: 3270984210336436470}
   - component: {fileID: 3356495081318651122}
+  - component: {fileID: 3481037076272193656}
   m_Layer: 0
   m_Name: VR Player
   m_TagString: Player
@@ -2563,6 +2564,22 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   isTriggerPressed:
     m_InternalValue: 0
+  audioManager_access: {fileID: 0}
+--- !u!114 &3481037076272193656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842678829648397640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da69f27fd3c6db43810b4b6c67df96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  pointP1: {fileID: 7830416994058990565, guid: 5f883ccf58f06ca49a15d9ccbe275513, type: 3}
+  pointP2: {fileID: 8221256171253812295, guid: be9acf9d07f58bd4bb50250c5f95d8d5, type: 3}
 --- !u!1001 &3143224214463510244
 PrefabInstance:
   m_ObjectHideFlags: 0
