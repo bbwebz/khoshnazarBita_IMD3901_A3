@@ -62,7 +62,7 @@ public class AudioManager : NetworkBehaviour
         if (player1Sound == player2Sound)
         {
             Debug.Log("players played the SAME sound");
-            //pointManager_access.addTeamPoint();
+            pointManager_access.addTeamPoint();
         }
 
         //play sound according to which tile was pressed (each tile plays a unique note)

@@ -1,11 +1,23 @@
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 
 public class PointManager : MonoBehaviour
 {
     public GameObject ScoreBoards;
-    public TextMeshProUGUI teamText1;
 
+    //texts that need to be updated for both canvases
+    public TextMeshProUGUI teamText1_cv1;
+    public TextMeshProUGUI teamText2_cv2;
+
+    //public NetworkVariable<TMPro.TextMeshProUGUI> TEAMTEXT_cv1;
+    //public NetworkVariable<TMPro.TextMeshProUGUI> TEAMTEXT_cv2;
+
+
+    public TextMeshProUGUI p1Text_cv1;
+    public TextMeshProUGUI p2Text_cv1;
+    public TextMeshProUGUI p1Text_cv2;
+    public TextMeshProUGUI p2Text_cv2;
 
     public int player1Points = 0;
     public int player2Points = 0;
@@ -16,10 +28,10 @@ public class PointManager : MonoBehaviour
     {
         player1Points += 1;
         Debug.Log("added point for P1");
-        
+
         //update text on scoreboard 1
-        
-        
+
+
         //update text on scoreboard 2
 
 
@@ -33,14 +45,30 @@ public class PointManager : MonoBehaviour
 
     }
 
+    //[ServerRpc(RequireOwnership = false)] 
     public void addTeamPoint()
     {
         teamPoints += 1;
         Debug.Log("added point for team points");
 
-        teamText1.GetComponent<TextMeshProUGUI>().text = "" + teamPoints;
+        //update text on both collaborative canvases
+        teamText1_cv1.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
+        teamText2_cv2.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
+        //TEAMTEXT_cv1.Value.text = teamPoints.ToString();
+        //TEAMTEXT_cv2.Value.text = teamPoints.ToString();
 
+
+       //updateTeamTextClientRpc();
     }
+
+   /* [ClientRpc] //called by the server, runs on the client
+    void updateTeamTextClientRpc()
+    {
+        teamText1_cv1.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
+        teamText2_cv2.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
+        //TEAMTEXT_cv1.Value.text = teamPoints.ToString();
+        //TEAMTEXT_cv2.Value.text = teamPoints.ToString();
+    }*/
 
 
 }
