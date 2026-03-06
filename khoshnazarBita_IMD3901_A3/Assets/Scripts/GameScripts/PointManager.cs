@@ -45,7 +45,6 @@ public class PointManager : NetworkBehaviour
         teamText1_cv1.text = value.ToString();
         teamText2_cv2.text = value.ToString();
     }
-
     
     public void addP1point()
     {

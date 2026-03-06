@@ -5170,7 +5170,7 @@ PrefabInstance:
     - target: {fileID: 7099724425186548248, guid: 98254f84fb3e0ae44adcbcce85e4c661, type: 3}
       propertyPath: NetworkConfig.PlayerPrefab
       value: 
-      objectReference: {fileID: 123514706950494819, guid: be84fb2b9b204724f804aab23ab958b7, type: 3}
+      objectReference: {fileID: 8842678829648397640, guid: 640199cf36a3df842b2692f6262ff007, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5800,7 +5800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1211113147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6942,7 +6942,7 @@ MonoBehaviour:
   Tile8: {fileID: 8300000, guid: d9722b55932f76b49b0f35c3be09339b, type: 3}
   Tile9: {fileID: 8300000, guid: 7a5c9ffb566af32488ef124e201c2291, type: 3}
   pointManager_access: {fileID: 1076789038}
-  chooseGameMode_access: {fileID: 0}
+  chooseGameMode_access: {fileID: 798266158}
 --- !u!1001 &1491847845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9195,7 +9195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2064514377
 MonoBehaviour:
   m_ObjectHideFlags: 0

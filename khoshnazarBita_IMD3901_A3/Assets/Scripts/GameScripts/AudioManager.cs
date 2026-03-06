@@ -64,11 +64,10 @@ public class AudioManager : NetworkBehaviour
             Debug.Log("players played the SAME sound");
             pointManager_access.addTeamPointServerRpc();
         }
-        else if (player1Sound != player2Sound) //if they didnt play the same sound
+        else if (player1Sound != player2Sound && chooseGameMode_access.isComp == true) //if they didnt play the same sound and they are in competitive mode
         {
             //means one player got it wrong
             //add a point for the player who pressed a tile first
-            
             Debug.Log("whoPressed first was: " + whoPressed);
             if (whoPressed == 0)
             {
