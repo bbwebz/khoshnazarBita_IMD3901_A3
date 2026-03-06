@@ -21,6 +21,7 @@ public class VRControllerInputNet : NetworkBehaviour
         rightHandRay = GetComponentInChildren<XRRayInteractor>();
     }
 
+    /*
     void Update()
     {
         if (!IsOwner) return;
@@ -38,7 +39,7 @@ public class VRControllerInputNet : NetworkBehaviour
             TriggerPressedServerRpc();
         }
 
-        if (triggerPressed)
+        if (triggerPressed && !isTriggerPressed.Value)
         {
             //check to see if the ray is colliding with something (like in pc)
             if (rightHandRay.TryGetCurrent3DRaycastHit(out RaycastHit hit))
@@ -74,7 +75,65 @@ public class VRControllerInputNet : NetworkBehaviour
             }
         }
     }
+    */
 
+
+    void Update()
+    {
+        if (!IsOwner) return;
+
+        if (Keyboard.current.tKey.wasPressedThisFrame) //for mock HMD
+        {
+            //check to see if the ray is colliding with something (like in pc)
+            if (rightHandRay.TryGetCurrent3DRaycastHit(out RaycastHit hit))
+            {
+                //check if the object has the tag "Interactable"
+                if (hit.collider.CompareTag("Interactable"))
+                {
+                    Debug.Log("Trigger pressed! Ray hit: " + hit.collider.name);
+
+                    string tileName = hit.collider.gameObject.name;
+                    //animate only the tile that was pressed/looked at
+                    TileAnimate tile = hit.collider.GetComponent<TileAnimate>();
+
+                    if (tile != null)
+                    {
+                        //int whoPressed = IsServer ? 0 : 1;
+
+                        //if (IsServer) //if host, directly animate the tile
+                        //{
+                        //    tile.AnimateTile();
+                        //}
+                        //else
+                        //{
+                        //    tile.PressTileServerRpc(tile.NetworkObjectId);
+                        //}
+
+                        if (IsHost)
+                        {
+                            //if host, directly animate the tile
+                            tile.AnimateTile();
+                            //play the sound and keep track of which tile player1 played
+                            audioManager_access.playTileSoundServerRpc(tileName, 0);
+                        }
+                        else if (IsClient)
+                        {
+                            //if client, request for ownership, animate the tile and synch
+                            tile.PressTileServerRpc(tile.NetworkObjectId);
+                            //play the sound and keep track of which tile player2 played
+                            audioManager_access.playTileSoundServerRpc(tileName, 1);
+                        }
+
+                        //audioManager_access.playTileSoundServerRpc(tileName, whoPressed);
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    /*
     [ServerRpc(RequireOwnership = false)]
     void TriggerPressedServerRpc()
     {
@@ -84,5 +143,6 @@ public class VRControllerInputNet : NetworkBehaviour
         //reset the boolean on the server
         isTriggerPressed.Value = false;
     }
+    */
 
 }
