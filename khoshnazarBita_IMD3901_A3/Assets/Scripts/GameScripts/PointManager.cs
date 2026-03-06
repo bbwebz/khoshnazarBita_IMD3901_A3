@@ -2,7 +2,7 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
-public class PointManager : MonoBehaviour
+public class PointManager : NetworkBehaviour
 {
     public GameObject ScoreBoards;
 
@@ -13,7 +13,6 @@ public class PointManager : MonoBehaviour
     //public NetworkVariable<TMPro.TextMeshProUGUI> TEAMTEXT_cv1;
     //public NetworkVariable<TMPro.TextMeshProUGUI> TEAMTEXT_cv2;
 
-
     public TextMeshProUGUI p1Text_cv1;
     public TextMeshProUGUI p2Text_cv1;
     public TextMeshProUGUI p1Text_cv2;
@@ -22,7 +21,8 @@ public class PointManager : MonoBehaviour
     public int player1Points = 0;
     public int player2Points = 0;
 
-    public int teamPoints = 0;
+    //public int teamPoints = 0;
+    public NetworkVariable<int> teamPoints;
 
     public void addP1point()
     {
@@ -36,8 +36,6 @@ public class PointManager : MonoBehaviour
         //update text on scoreboard 2
         p1Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player1Points;
         p2Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player2Points;
-
-
     }
 
     public void addP2point()
@@ -55,30 +53,40 @@ public class PointManager : MonoBehaviour
 
     }
 
-    //[ServerRpc(RequireOwnership = false)] 
-    public void addTeamPoint()
+
+    [ServerRpc(RequireOwnership = false)] 
+    public void addTeamPointServerRpc()
     {
-        teamPoints += 1;
+        //teamPoints += 1;
+        teamPoints.Value += 1;
+
         Debug.Log("added point for team points");
 
         //update text on both collaborative canvases
-        teamText1_cv1.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
-        teamText2_cv2.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
+        //teamText1_cv1.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
+        //teamText2_cv2.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
         //TEAMTEXT_cv1.Value.text = teamPoints.ToString();
         //TEAMTEXT_cv2.Value.text = teamPoints.ToString();
 
+        teamText1_cv1.GetComponent<TextMeshProUGUI>().text = teamPoints.Value.ToString();
+        teamText2_cv2.GetComponent<TextMeshProUGUI>().text = teamPoints.Value.ToString();
 
-       //updateTeamTextClientRpc();
+
+
+        updateTeamTextClientRpc();
     }
 
-   /* [ClientRpc] //called by the server, runs on the client
+
+    [ClientRpc] //called by the server, runs on the client
     void updateTeamTextClientRpc()
     {
-        teamText1_cv1.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
-        teamText2_cv2.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
+        //teamText1_cv1.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
+        //teamText2_cv2.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
         //TEAMTEXT_cv1.Value.text = teamPoints.ToString();
         //TEAMTEXT_cv2.Value.text = teamPoints.ToString();
-    }*/
+        teamText1_cv1.GetComponent<TextMeshProUGUI>().text = teamPoints.Value.ToString();
+        teamText2_cv2.GetComponent<TextMeshProUGUI>().text = teamPoints.Value.ToString();
+    }
 
 
 }

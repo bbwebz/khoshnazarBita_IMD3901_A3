@@ -16,7 +16,6 @@ public class AssignScripts : NetworkBehaviour
 
     public GameObject AudioManager;
 
-
     private void Awake()
     {
         if (assigner == null)
@@ -24,6 +23,7 @@ public class AssignScripts : NetworkBehaviour
             assigner = this;
         }
     }
+
     public override void OnNetworkSpawn()
     {
         //get the network object of each player
@@ -38,7 +38,6 @@ public class AssignScripts : NetworkBehaviour
             player2prefab = netObj; //client
         }
     }
-
 
 
     private void Update()

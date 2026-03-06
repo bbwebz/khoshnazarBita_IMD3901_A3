@@ -35,7 +35,6 @@ public class AudioManager : NetworkBehaviour
     }
     */
 
-
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
@@ -62,29 +61,10 @@ public class AudioManager : NetworkBehaviour
 
         if (player1Sound == player2Sound)
         {
-
-            //if (chooseGameMode_access.isComp == true) //if the game is competitive mode
-            //{
-                /*Debug.Log("whoPressed first was: " + whoPressed);
-                //its swapped so when its 0 it means client presseda tile first
-                //and when its 1 it means host pressed a tile first
-                if (whoPressed == 0)
-                {
-                    pointManager_access.addP2point();
-                }
-                else if (whoPressed == 1)
-                {
-                    pointManager_access.addP1point();
-                }*/
-
-
-             //}
-
             Debug.Log("players played the SAME sound");
-            pointManager_access.addTeamPoint();
+            pointManager_access.addTeamPointServerRpc();
         }
-
-        if (player1Sound != player2Sound) //if they didnt play the same sound
+        else if (player1Sound != player2Sound) //if they didnt play the same sound
         {
             //means one player got it wrong
             //add a point for the player who pressed a tile first

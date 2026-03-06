@@ -1633,9 +1633,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 389370572}
+  - component: {fileID: 389370575}
   - component: {fileID: 389370574}
   - component: {fileID: 389370573}
-  - component: {fileID: 389370575}
+  - component: {fileID: 389370576}
   m_Layer: 5
   m_Name: collab_score_text
   m_TagString: Untagged
@@ -1768,7 +1769,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389370571}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
@@ -1786,6 +1787,52 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &389370576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389370571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AutoOwnerAuthorityTickOffset: 1
+  PositionInterpolationType: 0
+  RotationInterpolationType: 0
+  ScaleInterpolationType: 0
+  PositionLerpSmoothing: 1
+  PositionMaxInterpolationTime: 0.1
+  RotationLerpSmoothing: 1
+  RotationMaxInterpolationTime: 0.1
+  ScaleLerpSmoothing: 1
+  ScaleMaxInterpolationTime: 0.1
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1 &404301396
 GameObject:
   m_ObjectHideFlags: 0
@@ -3916,6 +3963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38fc392c9d05ee45a0447dc3a639e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isComp: 0
+  isCollab: 0
   VRplayer: {fileID: 8842678829648397640, guid: 640199cf36a3df842b2692f6262ff007, type: 3}
   XRInteractionSimulator: {fileID: 866450634}
   NetworkManagerObject: {fileID: 652637632}
@@ -4842,6 +4891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1076789037}
+  - component: {fileID: 1076789039}
   - component: {fileID: 1076789038}
   m_Layer: 0
   m_Name: ScoreBoards
@@ -4879,6 +4929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4645ae2c0c43f784d92dc56fddabce3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   ScoreBoards: {fileID: 1076789036}
   teamText1_cv1: {fileID: 389370573}
   teamText2_cv2: {fileID: 1692334151}
@@ -4888,7 +4939,33 @@ MonoBehaviour:
   p2Text_cv2: {fileID: 1735901616}
   player1Points: 0
   player2Points: 0
-  teamPoints: 0
+  teamPoints:
+    m_InternalValue: 0
+--- !u!114 &1076789039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076789036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 92795012
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &1082989714
 GameObject:
   m_ObjectHideFlags: 0
@@ -6865,6 +6942,7 @@ MonoBehaviour:
   Tile8: {fileID: 8300000, guid: d9722b55932f76b49b0f35c3be09339b, type: 3}
   Tile9: {fileID: 8300000, guid: 7a5c9ffb566af32488ef124e201c2291, type: 3}
   pointManager_access: {fileID: 1076789038}
+  chooseGameMode_access: {fileID: 0}
 --- !u!1001 &1491847845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7708,6 +7786,7 @@ GameObject:
   - component: {fileID: 1692334152}
   - component: {fileID: 1692334151}
   - component: {fileID: 1692334153}
+  - component: {fileID: 1692334154}
   m_Layer: 5
   m_Name: collab_score_text
   m_TagString: Untagged
@@ -7840,7 +7919,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692334149}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
@@ -7858,6 +7937,52 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &1692334154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692334149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AutoOwnerAuthorityTickOffset: 1
+  PositionInterpolationType: 0
+  RotationInterpolationType: 0
+  ScaleInterpolationType: 0
+  PositionLerpSmoothing: 1
+  PositionMaxInterpolationTime: 0.1
+  RotationLerpSmoothing: 1
+  RotationMaxInterpolationTime: 0.1
+  ScaleLerpSmoothing: 1
+  ScaleMaxInterpolationTime: 0.1
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1 &1730201374
 GameObject:
   m_ObjectHideFlags: 0
