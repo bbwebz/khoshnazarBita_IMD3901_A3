@@ -30,9 +30,12 @@ public class PointManager : MonoBehaviour
         Debug.Log("added point for P1");
 
         //update text on scoreboard 1
-
+        p1Text_cv1.GetComponent<TextMeshProUGUI>().text = " " + player1Points;
+        p2Text_cv1.GetComponent<TextMeshProUGUI>().text = " " + player2Points;
 
         //update text on scoreboard 2
+        p1Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player1Points;
+        p2Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player2Points;
 
 
     }
@@ -42,6 +45,13 @@ public class PointManager : MonoBehaviour
         player2Points += 1;
         Debug.Log("added point for P2");
 
+        //update text on scoreboard 1
+        p1Text_cv1.GetComponent<TextMeshProUGUI>().text = " " + player1Points;
+        p2Text_cv1.GetComponent<TextMeshProUGUI>().text = " " + player2Points;
+
+        //update text on scoreboard 2
+        p1Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player1Points;
+        p2Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player2Points;
 
     }
 

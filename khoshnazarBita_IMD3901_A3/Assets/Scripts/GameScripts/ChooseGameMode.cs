@@ -7,8 +7,8 @@ public class ChooseGameMode : MonoBehaviour
 {
     bool isPCmode;
     bool isVRmode;
-    bool isComp;
-    bool isCollab;
+    public bool isComp;
+    public bool isCollab;
 
     //initialize references to VR and PC objects that will need to be toggled on or off
     public GameObject VRplayer;
