@@ -21,9 +21,32 @@ public class PointManager : NetworkBehaviour
     public int player1Points = 0;
     public int player2Points = 0;
 
-    //public int teamPoints = 0;
     public NetworkVariable<int> teamPoints;
 
+
+    public override void OnNetworkSpawn()
+    {
+        //set initial value
+        teamPoints.Value = 0;
+        teamPoints.OnValueChanged += OnTeamPointsChanged; 
+
+        //set initial value when object spawns
+        UpdateTeamText(teamPoints.Value);
+    }
+
+    private void OnTeamPointsChanged(int oldValue, int newValue)
+    {
+        //if the team points was changed by the host or the client(from within addTeamPointServerRpc)
+        UpdateTeamText(newValue);
+    }
+
+    private void UpdateTeamText(int value)
+    {
+        teamText1_cv1.text = value.ToString();
+        teamText2_cv2.text = value.ToString();
+    }
+
+    
     public void addP1point()
     {
         player1Points += 1;
@@ -50,43 +73,16 @@ public class PointManager : NetworkBehaviour
         //update text on scoreboard 2
         p1Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player1Points;
         p2Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player2Points;
-
     }
 
-
-    [ServerRpc(RequireOwnership = false)] 
+    [ServerRpc(RequireOwnership = false)] //host and client are able to ask the server to update the teampoints
     public void addTeamPointServerRpc()
     {
-        //teamPoints += 1;
+        //increasae the value of team points on both host and client since its a network variable
         teamPoints.Value += 1;
-
         Debug.Log("added point for team points");
-
-        //update text on both collaborative canvases
-        //teamText1_cv1.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
-        //teamText2_cv2.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
-        //TEAMTEXT_cv1.Value.text = teamPoints.ToString();
-        //TEAMTEXT_cv2.Value.text = teamPoints.ToString();
-
-        teamText1_cv1.GetComponent<TextMeshProUGUI>().text = teamPoints.Value.ToString();
-        teamText2_cv2.GetComponent<TextMeshProUGUI>().text = teamPoints.Value.ToString();
-
-
-
-        updateTeamTextClientRpc();
     }
 
-
-    [ClientRpc] //called by the server, runs on the client
-    void updateTeamTextClientRpc()
-    {
-        //teamText1_cv1.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
-        //teamText2_cv2.GetComponent<TextMeshProUGUI>().text = " " + teamPoints;
-        //TEAMTEXT_cv1.Value.text = teamPoints.ToString();
-        //TEAMTEXT_cv2.Value.text = teamPoints.ToString();
-        teamText1_cv1.GetComponent<TextMeshProUGUI>().text = teamPoints.Value.ToString();
-        teamText2_cv2.GetComponent<TextMeshProUGUI>().text = teamPoints.Value.ToString();
-    }
 
 
 }
