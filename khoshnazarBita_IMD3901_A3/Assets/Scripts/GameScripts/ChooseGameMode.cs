@@ -83,6 +83,7 @@ public class ChooseGameMode : MonoBehaviour
     public void setVRmode()
     {
         isVRmode = true;
+        Debug.Log("chose vr mode");
 
         //turn off all the PC related stuff and turn on anything VR related
         XRInteractionManager.SetActive(true);
@@ -101,6 +102,7 @@ public class ChooseGameMode : MonoBehaviour
     public void setPCmode()
     {
         isVRmode = true;
+        Debug.Log("chose pc mode");
 
         //turn off all the VR related stuff and turn on anything PC related
         XRInteractionManager.SetActive(false);
