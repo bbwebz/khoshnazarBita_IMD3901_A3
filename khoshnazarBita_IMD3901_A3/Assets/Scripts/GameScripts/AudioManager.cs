@@ -23,6 +23,7 @@ public class AudioManager : NetworkBehaviour
     //store strings of which tile each player pressed (for comparison later on)
     string player1Sound; 
     string player2Sound;
+    int firstPlayer = -1; //player who presses first
 
     public PointManager pointManager_access;
     public ChooseGameMode chooseGameMode_access;
@@ -47,6 +48,11 @@ public class AudioManager : NetworkBehaviour
         //if whoPressed = 0 it was the host
         //if whoPressed = 1 it was the client
 
+        if (firstPlayer == -1)
+        {
+            firstPlayer = whoPressed;
+        }
+
         if (whoPressed == 0)
         {
             player1Sound = tileName;
@@ -59,26 +65,38 @@ public class AudioManager : NetworkBehaviour
             Debug.Log("client played " + tileName + " sound");
         }
 
-        if (player1Sound == player2Sound)
+        if(player1Sound != null && player2Sound != null) //only if both players have played a sound
         {
-            Debug.Log("players played the SAME sound");
-            pointManager_access.addTeamPointServerRpc();
-        }
-        else if (player1Sound != player2Sound && chooseGameMode_access.isComp == true) //if they didnt play the same sound and they are in competitive mode
-        {
-            //means one player got it wrong
-            //add a point for the player who pressed a tile first
-            Debug.Log("whoPressed first was: " + whoPressed);
-            if (whoPressed == 0)
+            if (player1Sound == player2Sound && chooseGameMode_access.isCollab == true) //if they played the same sound and they are in collaborative mode
             {
-                pointManager_access.addP2point();
+                Debug.Log("players played the SAME sound");
+                pointManager_access.addTeamPointServerRpc();
             }
-            else if (whoPressed == 1)
+            else if (player1Sound != player2Sound && chooseGameMode_access.isComp == true) //if they didnt play the same sound and they are in competitive mode
             {
-                pointManager_access.addP1point();
+                Debug.Log("players played a DIFFERENT sound");
+
+                //means one player got it wrong
+                //add a point for the player who pressed a tile first
+                //Debug.Log("whoPressed first was: " + whoPressed);
+                Debug.Log("firstPlayer was: " + firstPlayer);
+
+                if (firstPlayer == 0)
+                {
+                    pointManager_access.addP1PointServerRpc();
+                }
+                else if (firstPlayer == 1)
+                {
+                    pointManager_access.addP2PointServerRpc();
+                }
             }
 
+            //reset for next round
+            player1Sound = null;
+            player2Sound = null;
+            firstPlayer = -1;
         }
+       
 
         //play sound according to which tile was pressed (each tile plays a unique note)
         switch (tileName)

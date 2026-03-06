@@ -7,8 +7,8 @@ public class ChooseGameMode : MonoBehaviour
 {
     bool isPCmode;
     bool isVRmode;
-    public bool isComp;
-    public bool isCollab;
+    public bool isComp = false;
+    public bool isCollab = false;
 
     //initialize references to VR and PC objects that will need to be toggled on or off
     public GameObject VRplayer;
@@ -21,7 +21,11 @@ public class ChooseGameMode : MonoBehaviour
     public Canvas choose_game_mode;
     public Canvas choose_comp_collab;
     public Canvas networking_canvas;
-    //public Canvas ScoreBoards;
+    public Canvas collaborative_canvas1;
+    public Canvas competitive_canvas1;
+    public Canvas collaborative_canvas2;
+    public Canvas competitive_canvas2;
+
 
 
     public void setVRmode()
@@ -66,7 +70,15 @@ public class ChooseGameMode : MonoBehaviour
         isCollab = true;
 
         Debug.Log("chose a collaborative game");
-        //turn on the next canvas of starting host or client
+
+        //turn ON collaborative canvas in the scene
+        collaborative_canvas1.gameObject.SetActive(true);
+        collaborative_canvas2.gameObject.SetActive(true);
+        //turn off competitive canvas in the scene
+        competitive_canvas1.gameObject.SetActive(false);
+        competitive_canvas2.gameObject.SetActive(false);
+
+        //turn ON the next canvas of starting host or client
         networking_canvas.gameObject.SetActive(true);
         //turn off current canvas
         choose_comp_collab.gameObject.SetActive(false);
@@ -77,12 +89,19 @@ public class ChooseGameMode : MonoBehaviour
         isComp = true;
 
         Debug.Log("chose a competitive game");
+
+        //turn OFF collaborative canvas in the scene
+        collaborative_canvas1.gameObject.SetActive(false);
+        collaborative_canvas2.gameObject.SetActive(false);
+        //turn ON competitive canvas in the scene
+        competitive_canvas1.gameObject.SetActive(true);
+        competitive_canvas2.gameObject.SetActive(true);
+
         //turn on the next canvas of starting host or client
         networking_canvas.gameObject.SetActive(true);
         //turn off current canvas
         choose_comp_collab.gameObject.SetActive(false);
     }
-
 
 
 }

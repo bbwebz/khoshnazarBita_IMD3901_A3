@@ -3972,6 +3972,10 @@ MonoBehaviour:
   choose_game_mode: {fileID: 1211113149}
   choose_comp_collab: {fileID: 902392808}
   networking_canvas: {fileID: 2064514379}
+  collaborative_canvas1: {fileID: 1652107120}
+  competitive_canvas1: {fileID: 316998808}
+  collaborative_canvas2: {fileID: 119535049}
+  competitive_canvas2: {fileID: 320266821}
 --- !u!4 &798266159
 Transform:
   m_ObjectHideFlags: 0
@@ -4937,9 +4941,11 @@ MonoBehaviour:
   p2Text_cv1: {fileID: 1061340153}
   p1Text_cv2: {fileID: 257097840}
   p2Text_cv2: {fileID: 1735901616}
-  player1Points: 0
-  player2Points: 0
   teamPoints:
+    m_InternalValue: 0
+  player1Points:
+    m_InternalValue: 0
+  player2Points:
     m_InternalValue: 0
 --- !u!114 &1076789039
 MonoBehaviour:
