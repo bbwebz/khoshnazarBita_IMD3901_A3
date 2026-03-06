@@ -3891,7 +3891,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VRplayer: {fileID: 8842678829648397640, guid: 640199cf36a3df842b2692f6262ff007, type: 3}
-  XRInteractionManager: {fileID: 8209457209130503679}
   XRInteractionSimulator: {fileID: 866450634}
   NetworkManagerObject: {fileID: 652637632}
   PCplayer: {fileID: 123514706950494819, guid: be84fb2b9b204724f804aab23ab958b7, type: 3}
@@ -9389,72 +9388,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f883ccf58f06ca49a15d9ccbe275513, type: 3}
---- !u!1001 &8209457209130503678
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3807882456442825267, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 768.3173
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807882456442825267, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807882456442825267, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1895.2771
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807882456442825267, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807882456442825267, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807882456442825267, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807882456442825267, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807882456442825267, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807882456442825267, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807882456442825267, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8323729335012036392, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_Name
-      value: XRInteractionManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8323729335012036392, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
---- !u!1 &8209457209130503679 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8323729335012036392, guid: b6e6e6f4f679fc049ac3c18d4dedb864, type: 3}
-  m_PrefabInstance: {fileID: 8209457209130503678}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -9472,7 +9405,6 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 1095082347}
   - {fileID: 1201479073}
-  - {fileID: 8209457209130503678}
   - {fileID: 1691924623}
   - {fileID: 562885857}
   - {fileID: 1938991302}

@@ -12,7 +12,7 @@ public class ChooseGameMode : MonoBehaviour
 
     //initialize references to VR and PC objects that will need to be toggled on or off
     public GameObject VRplayer;
-    public GameObject XRInteractionManager;
+    //public GameObject XRInteractionManager;
     public GameObject XRInteractionSimulator;
     public GameObject NetworkManagerObject;
     public GameObject PCplayer;
@@ -23,62 +23,6 @@ public class ChooseGameMode : MonoBehaviour
     public Canvas networking_canvas;
     //public Canvas ScoreBoards;
 
-    void Update()
-    {
-        /*
-        if (isPCmode == true) //if PC mode was selected
-        {
-            //turn off all the VR related stuff and turn on anything PC related
-            XRInteractionManager.SetActive(false);
-            XRInteractionSimulator.SetActive(false);
-
-            //switch the prefab in the networkmanagerobject to be set to the PC player prefab
-            NetworkManager.Singleton.NetworkConfig.PlayerPrefab = PCplayer;
-
-            //turn on the next canvas of choosing collaborative or competitive game mode
-            choose_comp_collab.gameObject.SetActive(true);
-            //turn off current canvas
-            choose_game_mode.gameObject.SetActive(false);
-        }
-
-        if (isVRmode == true)
-        {
-            //turn off all the PC related stuff and turn on anything VR related
-            XRInteractionManager.SetActive(true);
-            XRInteractionSimulator.SetActive(true);
-
-            //switch the prefab in the networkmanagerobject to be set to the VR player prefab
-            NetworkManager.Singleton.NetworkConfig.PlayerPrefab = VRplayer;
-
-            //turn on the next canvas of choosing collaborative or competitive game mode
-            choose_comp_collab.gameObject.SetActive(true);
-            //turn off current canvas
-            choose_game_mode.gameObject.SetActive(false);
-
-            //next check to see which game type was selected 
-            if (isCollab == true)
-            {
-                Debug.Log("chose a collaborative game");
-                //turn on the next canvas of starting host or client
-                networking_canvas.gameObject.SetActive(true);
-                //turn off current canvas
-                choose_comp_collab.gameObject.SetActive(false);
-            }
-            else if (isComp == true)
-            {
-                Debug.Log("chose a competitive game");
-                //turn on the next canvas of starting host or client
-                networking_canvas.gameObject.SetActive(true);
-                //turn off current canvas
-                choose_comp_collab.gameObject.SetActive(false);
-            }
-
-        }
-        */
-
-
-
-    }
 
     public void setVRmode()
     {
@@ -86,7 +30,7 @@ public class ChooseGameMode : MonoBehaviour
         Debug.Log("chose vr mode");
 
         //turn off all the PC related stuff and turn on anything VR related
-        XRInteractionManager.SetActive(true);
+        //XRInteractionManager.SetActive(true);
         XRInteractionSimulator.SetActive(true);
 
         //switch the prefab in the networkmanagerobject to be set to the VR player prefab
@@ -101,11 +45,11 @@ public class ChooseGameMode : MonoBehaviour
 
     public void setPCmode()
     {
-        isVRmode = true;
+        isPCmode = true;
         Debug.Log("chose pc mode");
 
         //turn off all the VR related stuff and turn on anything PC related
-        XRInteractionManager.SetActive(false);
+        //XRInteractionManager.SetActive(false);
         XRInteractionSimulator.SetActive(false);
 
         //switch the prefab in the networkmanagerobject to be set to the PC player prefab
@@ -130,7 +74,7 @@ public class ChooseGameMode : MonoBehaviour
 
     public void setCompMode()
     {
-        isComp = false;
+        isComp = true;
 
         Debug.Log("chose a competitive game");
         //turn on the next canvas of starting host or client

@@ -36,8 +36,8 @@ public class PlayerControllerNet : NetworkBehaviour
             Debug.Log("placed client at spawn point");
             gameObject.transform.transform.position = pointP2.position;
         }
-
     }
+
 
     void Update()
     {
