@@ -15,7 +15,6 @@ public class AssignScripts : NetworkBehaviour
     public NetworkObject player2prefab;
 
     public GameObject AudioManager;
-    public GameObject SpawnPointManager;
 
 
     private void Awake()
