@@ -12,7 +12,6 @@ public class ChooseGameMode : MonoBehaviour
 
     //initialize references to VR and PC objects that will need to be toggled on or off
     public GameObject VRplayer;
-    //public GameObject XRInteractionManager;
     public GameObject XRInteractionSimulator;
     public GameObject NetworkManagerObject;
     public GameObject PCplayer;
@@ -27,14 +26,12 @@ public class ChooseGameMode : MonoBehaviour
     public Canvas competitive_canvas2;
 
 
-
     public void setVRmode()
     {
         isVRmode = true;
         Debug.Log("chose vr mode");
 
         //turn off all the PC related stuff and turn on anything VR related
-        //XRInteractionManager.SetActive(true);
         XRInteractionSimulator.SetActive(true);
 
         //switch the prefab in the networkmanagerobject to be set to the VR player prefab
@@ -53,7 +50,6 @@ public class ChooseGameMode : MonoBehaviour
         Debug.Log("chose pc mode");
 
         //turn off all the VR related stuff and turn on anything PC related
-        //XRInteractionManager.SetActive(false);
         XRInteractionSimulator.SetActive(false);
 
         //switch the prefab in the networkmanagerobject to be set to the PC player prefab

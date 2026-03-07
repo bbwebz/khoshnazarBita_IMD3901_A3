@@ -15,9 +15,7 @@ public class PointManager : NetworkBehaviour
     public TextMeshProUGUI p1Text_cv2;
     public TextMeshProUGUI p2Text_cv2;
 
-    //public int player1Points = 0;
-    //public int player2Points = 0;
-
+    //network variable for things that need to be synched between host and client
     public NetworkVariable<int> teamPoints;
     public NetworkVariable<int> player1Points;
     public NetworkVariable<int> player2Points;
@@ -96,45 +94,5 @@ public class PointManager : NetworkBehaviour
         player2Points.Value += 1;
         Debug.Log("added point for P2");
     }
-
-
-
-
-
-
-
-
-    //-------------------------------------------------------------------------------------------
-    /*
-    public void addP1point()
-    {
-        player1Points += 1;
-        Debug.Log("added point for P1");
-
-        //update text on scoreboard 1
-        p1Text_cv1.GetComponent<TextMeshProUGUI>().text = " " + player1Points;
-        p2Text_cv1.GetComponent<TextMeshProUGUI>().text = " " + player2Points;
-
-        //update text on scoreboard 2
-        p1Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player1Points;
-        p2Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player2Points;
-    }
-
-    public void addP2point()
-    {
-        player2Points += 1;
-        Debug.Log("added point for P2");
-
-        //update text on scoreboard 1
-        p1Text_cv1.GetComponent<TextMeshProUGUI>().text = " " + player1Points;
-        p2Text_cv1.GetComponent<TextMeshProUGUI>().text = " " + player2Points;
-
-        //update text on scoreboard 2
-        p1Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player1Points;
-        p2Text_cv2.GetComponent<TextMeshProUGUI>().text = " " + player2Points;
-    }
-    */
-    
-
 
 }
