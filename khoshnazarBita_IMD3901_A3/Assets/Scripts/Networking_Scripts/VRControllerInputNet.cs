@@ -62,7 +62,6 @@ public class VRControllerInputNet : NetworkBehaviour
         }
     }
 
-
     /*
     [ServerRpc(RequireOwnership = false)]
     void TriggerPressedServerRpc()

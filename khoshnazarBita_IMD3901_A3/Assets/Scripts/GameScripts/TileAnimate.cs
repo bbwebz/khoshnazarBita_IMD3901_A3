@@ -24,24 +24,6 @@ public class TileAnimate : NetworkBehaviour
 
     void Update()
     {
-        /*
-        if (Keyboard.current.pKey.wasPressedThisFrame) //if p was pressed
-        {
-            //isPressed = true;
-            Debug.Log("p was presssed to press tile");
-
-            if (IsOwner) //if the host pressed p just animate the tile, already has ownership
-            {
-                AnimateTile();
-            }
-           
-            if (IsClient) //if the client pressed p, request the server for ownership, then animate the tile
-            {
-                PressTileServerRpc(netObj_tile.NetworkObjectId);
-            }
-        }
-        */
-
         //animate the tile up and down once its been pressed
         if (isAnimating)
         {
@@ -60,9 +42,7 @@ public class TileAnimate : NetworkBehaviour
                 }
             }
         }
-
     }
-
     public void AnimateTile()
     {
         isPressed = true;
